@@ -20,4 +20,6 @@
 //const int RANGE_FINDER_PORT = 1;
 //const int RANGE_FINDER_MODULE = 1;
 
+const int COMPRESSOR_INPUT = 3;
+
 #endif

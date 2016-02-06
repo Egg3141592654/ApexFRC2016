@@ -2,13 +2,18 @@
 #include "Robot.h"
 
 std::shared_ptr<TankDrive> Robot::drivetrain;
+std::shared_ptr<Pneumatics> Robot::pneumatics;
+
 std::shared_ptr<OI> Robot::oi;
 
 void Robot::RobotInit()
 {
 	CommandBase::init();
 	drivetrain.reset(new TankDrive());
+	pneumatics.reset(new Pneumatics());
 	oi.reset(new OI());
+
+	pneumatics->Start();
 }
 
 /**
