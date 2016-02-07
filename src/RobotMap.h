@@ -21,5 +21,6 @@
 //const int RANGE_FINDER_MODULE = 1;
 
 const int COMPRESSOR_INPUT = 3;
-
+const int SOLENOID_FINGER = 0;
+const int FINGER_BUTTON = 2;
 #endif
