@@ -1,7 +1,7 @@
 #include "TankDriveTwoSticks.h"
 #include "Robot.h"
 
-TankDriveTwoSticks::TankDriveTwoSticks() : CommandBase("TankDriveTwoSticks")
+TankDriveTwoSticks::TankDriveTwoSticks() : Command("TankDriveTwoSticks")
 {
 	// Use Requires() here to declare subsystem dependencies
 	Requires(Robot::drivetrain.get());

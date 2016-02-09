@@ -1,12 +1,11 @@
 #ifndef MoveFinger_H
 #define MoveFinger_H
 
-#include "../CommandBase.h"
 #include "WPILib.h"
 
 #include "RobotMap.h"
 
-class MoveFinger: public CommandBase
+class MoveFinger: public Command
 {
 public:
 	MoveFinger();

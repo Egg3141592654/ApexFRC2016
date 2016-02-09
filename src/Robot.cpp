@@ -9,7 +9,6 @@ std::shared_ptr<OI> Robot::oi;
 
 void Robot::RobotInit()
 {
-	CommandBase::init();
 	drivetrain.reset(new TankDrive());
 	pneumatics.reset(new Pneumatics());
 	finger.reset(new Finger());
