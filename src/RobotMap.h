@@ -20,7 +20,35 @@
 //const int RANGE_FINDER_PORT = 1;
 //const int RANGE_FINDER_MODULE = 1;
 
-const int COMPRESSOR_INPUT = 3;
+// Constants for the motor ports.
+// Edit these if the motor ports change.
+const int LEFT_FRONT_MOTOR = 1;
+const bool LEFT_FRONT_REVERSED = true;
+
+const int LEFT_BACK_MOTOR = 2;
+const bool LEFT_BACK_REVERSED = true;
+
+const int RIGHT_FRONT_MOTOR = 3;
+const bool RIGHT_REVERSED = false;
+
+const int RIGHT_BACK_MOTOR = 4;
+const bool RIGHT_BACK_REVERSED = false;
+
+const int ARM_MOTOR_1 = 5;
+const int ARM_MOTOR_1_REVERSED = false;
+
+const int ARM_MOTOR_2 = 6;
+const int ARM_MOTOR_2_REVERSED = false;
+
+// Digital Inputs
 const int SOLENOID_FINGER = 0;
+
+// Analog Inputs
+const int PID_CONTROL = 0;
+const int COMPRESSOR_INPUT = 3;
 const int FINGER_BUTTON = 2;
+
+// PID potentiometer values
+const double ARM_START_POSITION = .5;
+
 #endif
