@@ -9,7 +9,7 @@
 class MoveFinger: public CommandBase
 {
 public:
-	ExampleCommand();
+	MoveArm();
 	void Initialize();
 	void Execute();
 	bool IsFinished();
