@@ -1,7 +1,7 @@
 #include "MoveFinger.h"
 #include "Robot.h"
 
-MoveFinger::MoveFinger()
+MoveFinger::MoveFinger() : Command("MoveFinger")
 {
 	// Use Requires() here to declare subsystem dependencies
 	Requires(Robot::finger.get());
