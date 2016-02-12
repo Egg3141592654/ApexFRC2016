@@ -23,4 +23,6 @@
 const int COMPRESSOR_INPUT = 3;
 const int SOLENOID_FINGER = 0;
 const int FINGER_BUTTON = 2;
+const int ARM_BUTTON = 1;
+const int SOLINOID_ARM = 5;
 #endif
