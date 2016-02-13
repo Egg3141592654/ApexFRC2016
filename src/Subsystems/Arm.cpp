@@ -4,7 +4,7 @@
 Arm::Arm() :
 		Subsystem("Arm")
 {
-solenoid = new Solenoid (SOLINOID_ARM);
+solenoid = new Solenoid (SOLENOID_ARM);
 }
 
 void Arm::InitDefaultCommand()
