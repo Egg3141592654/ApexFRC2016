@@ -18,6 +18,7 @@
 #include "Subsystems/Finger.h"
 #include "Subsystems/Arm.h"
 #include "Subsystems/WheelieBar.h"
+#include "Subsystems/BallCollector.h"
 
 class Robot : public IterativeRobot
 {
@@ -27,6 +28,7 @@ public:
 	static std::shared_ptr<Finger> finger;
 	static std::shared_ptr<Arm> arm;
 	static std::shared_ptr<WheelieBar> wheeliebar;
+	static std::shared_ptr<BallCollector> ballCollector;
 
 	static std::shared_ptr<OI> oi;
 

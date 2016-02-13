@@ -27,5 +27,9 @@ const int ARM_BUTTON = 1;
 const int SOLENOID_ARM = 5;
 const int SOLENOID_WHEELIEBAR = 4;
 const int WHEELIEBAR_BUTTON = 3;
+const int FEEDER_FOREWARD = 7;
+const int FEEDER_STOP = 8;
+const int FEEDER_INGEST = 9;
+const int MOTOR_PORT = 7;
 #endif
 
