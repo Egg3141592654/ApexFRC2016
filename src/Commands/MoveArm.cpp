@@ -16,7 +16,7 @@ void MoveArm::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void MoveArm::Execute()
 {
-	bool result= Robot::oi.get()->GetLeftStick()->GetRawButton(ARM_BUTTON);
+	bool result = Robot::oi.get()->GetLeftStick()->GetRawButton(ARM_BUTTON);
 	Robot::arm.get()->Open(result);
 }
 

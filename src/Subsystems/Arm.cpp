@@ -4,7 +4,7 @@
 Arm::Arm() :
 		Subsystem("Arm")
 {
-solinoid = new Solinoid (SOLINOID_ARM);
+solenoid = new Solenoid (SOLINOID_ARM);
 }
 
 void Arm::InitDefaultCommand()
@@ -15,7 +15,7 @@ void Arm::InitDefaultCommand()
 
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
-void Arm::Open(bool setposition);
+void Arm::Open(bool setposition)
 {
 	solenoid->Set(setposition);
 }

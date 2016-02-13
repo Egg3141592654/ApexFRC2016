@@ -2,7 +2,6 @@
 #define MoveFinger_H
 
 #include "WPILib.h"
-
 #include "RobotMap.h"
 
 class MoveFinger: public Command

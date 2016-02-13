@@ -11,7 +11,7 @@ class Arm: public Subsystem
 private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
-	Solinoid* solinoid;
+	Solenoid* solenoid;
 public:
 	Arm();
 		void InitDefaultCommand();
