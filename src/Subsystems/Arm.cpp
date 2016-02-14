@@ -4,7 +4,7 @@
 #include "LiveWindow/LiveWindow.h"
 
 Arm::Arm() :
-		PIDSubsystem("Arm", 1.0, 0.0, 0.0)
+		PIDSubsystem("Arm", ARM_P, ARM_I, ARM_D)
 {
 	// Use these to get going:
 	// SetSetpoint() -  Sets where the PID controller should move the system
@@ -26,7 +26,7 @@ Arm::Arm() :
 	LiveWindow::GetInstance()->AddSensor("Arm", "Arm Control Pot", controlPot.get());
 
 	// ALWAYS SET A PID SYSTEM TO A START POINT!
-	SetSetpoint(ARM_START_POSITION);
+	SetSetpoint(ARM_CARRY_POSITION);
 
 	Enable();
 }
@@ -38,7 +38,7 @@ double Arm::ReturnPIDInput()
 	// yourPot->SetAverageVoltage() / kYourMaxVoltage;
 
 	// TODO: Get logic line voltage from myRIO. For now, use 5
-	return controlPot->GetAverageVoltage() / 5.0;
+	return controlPot->GetVoltage() / 5.0;
 }
 
 void Arm::UsePIDOutput(double output)
@@ -60,5 +60,15 @@ void Arm::UsePIDOutput(double output)
 void Arm::InitDefaultCommand()
 {
 	// Set the default command for a subsystem here.
-	// There is no default command for this subsystem. Many will call here.
+	SetDefaultCommand(new PositionArm());
+}
+
+void Arm::SetNewPosition(double newTarget)
+{
+	SetSetpoint(newTarget);
+}
+
+void Arm::SetNewRelativePosition(Joystick * stick)
+{
+	SetSetpointRelative(TUNING_CONSTANT * stick->GetRawAxis(ARM_ADJUST_AXIS));
 }

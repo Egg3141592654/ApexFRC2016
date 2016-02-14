@@ -2,6 +2,7 @@
 #define Arm_H
 
 #include "Commands/PIDSubsystem.h"
+#include "Commands/PositionArm.h"
 #include "WPILib.h"
 
 class Arm: public PIDSubsystem
@@ -17,6 +18,8 @@ public:
 	double ReturnPIDInput();
 	void UsePIDOutput(double output);
 	void InitDefaultCommand();
+	void SetNewPosition(double);
+	void SetNewRelativePosition(Joystick *);
 };
 
 #endif
