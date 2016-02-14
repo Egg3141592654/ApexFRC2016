@@ -5,6 +5,7 @@ std::shared_ptr<TankDrive> Robot::drivetrain;
 std::shared_ptr<Pneumatics> Robot::pneumatics;
 std::shared_ptr<Finger> Robot::finger;
 std::shared_ptr<Arm> Robot::arm;
+std::shared_ptr<WheelieBar> Robot::wheeliebar;
 
 std::shared_ptr<OI> Robot::oi;
 
@@ -14,6 +15,7 @@ void Robot::RobotInit()
 	pneumatics.reset(new Pneumatics());
 	finger.reset(new Finger());
 	arm.reset(new Arm());
+	wheeliebar.reset(new WheelieBar());
 	oi.reset(new OI());
 
 	pneumatics->Start();

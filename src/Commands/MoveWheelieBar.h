@@ -1,13 +1,12 @@
-#ifndef MoveFinger_H
-#define MoveFinger_H
+#ifndef MoveWheelieBar_H
+#define MoveWheelieBar_H
 
 #include "WPILib.h"
-#include "RobotMap.h"
 
-class MoveFinger: public Command
+class MoveWheelieBar: public Command
 {
 public:
-	MoveFinger();
+	MoveWheelieBar();
 	void Initialize();
 	void Execute();
 	bool IsFinished();

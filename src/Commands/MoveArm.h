@@ -1,13 +1,14 @@
-#ifndef MoveFinger_H
-#define MoveFinger_H
+#ifndef MoveArm_H
+#define MoveArm_H
 
 #include "WPILib.h"
+
 #include "RobotMap.h"
 
-class MoveFinger: public Command
+class MoveArm : public Command
 {
 public:
-	MoveFinger();
+	MoveArm();
 	void Initialize();
 	void Execute();
 	bool IsFinished();

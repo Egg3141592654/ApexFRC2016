@@ -42,13 +42,21 @@ const int ARM_MOTOR_2_REVERSED = false;
 
 // Digital Inputs
 const int SOLENOID_FINGER = 0;
+const int SOLENOID_ARM = 5;
+const int SOLENOID_WHEELIEBAR = 4;
 
 // Analog Inputs
 const int PID_CONTROL = 0;
 const int COMPRESSOR_INPUT = 3;
-const int FINGER_BUTTON = 2;
 
 // PID potentiometer values
 const double ARM_START_POSITION = .5;
 
+// Buttons for button joystick
+const int ARM_BUTTON = 1;
+const int FINGER_BUTTON = 2;
+const int WHEELIEBAR_BUTTON = 3;
+
+
 #endif
+
