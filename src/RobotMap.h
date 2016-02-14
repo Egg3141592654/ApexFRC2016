@@ -20,6 +20,11 @@
 //const int RANGE_FINDER_PORT = 1;
 //const int RANGE_FINDER_MODULE = 1;
 
+// Joystick ports to use
+const int ARM_JOYSTICK_PORT = 0;
+const int LEFT_JOYSTICK_PORT = 1;
+const int RIGHT_JOYSTICK_PORT = 2;
+
 // Constants for the motor ports.
 // Edit these if the motor ports change.
 const int LEFT_FRONT_MOTOR = 1;
