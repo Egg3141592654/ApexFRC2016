@@ -42,8 +42,8 @@ const int ARM_MOTOR_2_REVERSED = false;
 
 // Digital Inputs
 const int SOLENOID_FINGER = 0;
-const int SOLENOID_ARM = 5;
-const int SOLENOID_WHEELIEBAR = 4;
+const int SOLENOID_ARM = 1;
+const int SOLENOID_WHEELIEBAR = 2;
 
 // Analog Inputs
 const int PID_CONTROL = 0;
