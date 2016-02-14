@@ -2,6 +2,7 @@
 #define ArmElevator_H
 
 #include "Commands/Subsystem.h"
+#include "Commands/MoveArm.h"
 #include "WPILib.h"
 
 class ArmElevator: public Subsystem
@@ -14,6 +15,7 @@ private:
 public:
 	ArmElevator();
 	void InitDefaultCommand();
+	void Open(bool);
 };
 
 #endif

@@ -4,7 +4,7 @@
 MoveArm::MoveArm()
 {
 	// Use Requires() here to declare subsystem dependencies
-	Requires(Robot::arm.get());
+	Requires(Robot::armElevator.get());
 }
 
 // Called just before this Command runs the first time
@@ -17,7 +17,7 @@ void MoveArm::Initialize()
 void MoveArm::Execute()
 {
 	bool result = Robot::oi.get()->GetLeftStick()->GetRawButton(ARM_BUTTON);
-	Robot::arm.get()->Open(result);
+	Robot::armElevator.get()->Open(result);
 }
 
 // Make this return true when this Command no longer needs to run execute()

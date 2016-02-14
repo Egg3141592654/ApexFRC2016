@@ -1,10 +1,9 @@
 #ifndef ArmToPickup_H
 #define ArmToPickup_H
 
-#include "../CommandBase.h"
 #include "WPILib.h"
 
-class ArmToPickup: public CommandBase
+class ArmToPickup: public Command
 {
 public:
 	ArmToPickup();

@@ -15,7 +15,7 @@ void ArmElevator::InitDefaultCommand()
 
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
-void Arm::Open(bool setposition)
+void ArmElevator::Open(bool setposition)
 {
 	solenoid->Set(setposition);
 }

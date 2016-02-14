@@ -18,6 +18,7 @@
 #include "Subsystems/Pneumatics.h"
 #include "Subsystems/Finger.h"
 #include "Subsystems/Arm.h"
+#include "Subsystems/ArmElevator.h"
 #include "Subsystems/WheelieBar.h"
 
 class Robot : public IterativeRobot
@@ -28,6 +29,7 @@ public:
 	static std::shared_ptr<Finger> finger;
 	static std::shared_ptr<Arm> arm;
 	static std::shared_ptr<WheelieBar> wheeliebar;
+	static std::shared_ptr<ArmElevator> armElevator;
 
 	static std::shared_ptr<OI> oi;
 

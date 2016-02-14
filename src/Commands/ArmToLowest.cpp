@@ -1,6 +1,6 @@
 #include "ArmToLowest.h"
 
-ArmToLowest::ArmToLowest()
+ArmToLowest::ArmToLowest() : Command("ArmToLowest")
 {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);

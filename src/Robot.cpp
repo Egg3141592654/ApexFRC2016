@@ -6,6 +6,7 @@ std::shared_ptr<Pneumatics> Robot::pneumatics;
 std::shared_ptr<Finger> Robot::finger;
 std::shared_ptr<Arm> Robot::arm;
 std::shared_ptr<WheelieBar> Robot::wheeliebar;
+std::shared_ptr<ArmElevator> Robot::armElevator;
 
 std::shared_ptr<OI> Robot::oi;
 
@@ -16,6 +17,7 @@ void Robot::RobotInit()
 	finger.reset(new Finger());
 	arm.reset(new Arm());
 	wheeliebar.reset(new WheelieBar());
+	armElevator.reset(new ArmElevator());
 	oi.reset(new OI());
 
 	pneumatics->Start();

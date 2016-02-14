@@ -1,10 +1,9 @@
 #ifndef ArmToCarry_H
 #define ArmToCarry_H
 
-#include "../CommandBase.h"
 #include "WPILib.h"
 
-class ArmToCarry: public CommandBase
+class ArmToCarry: public Command
 {
 public:
 	ArmToCarry();

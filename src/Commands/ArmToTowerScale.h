@@ -1,10 +1,9 @@
 #ifndef ArmToTowerScale_H
 #define ArmToTowerScale_H
 
-#include "../CommandBase.h"
 #include "WPILib.h"
 
-class ArmToTowerScale: public CommandBase
+class ArmToTowerScale: public Command
 {
 public:
 	ArmToTowerScale();

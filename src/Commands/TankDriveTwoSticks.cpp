@@ -1,8 +1,6 @@
 #include "TankDriveTwoSticks.h"
 #include "Robot.h"
 
-std::shared_ptr<OI> Robot::oi;
-
 TankDriveTwoSticks::TankDriveTwoSticks() : Command("TankDriveTwoSticks")
 {
 	// Use Requires() here to declare subsystem dependencies

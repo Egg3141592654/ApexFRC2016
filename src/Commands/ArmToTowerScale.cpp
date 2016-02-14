@@ -1,9 +1,10 @@
 #include "ArmToTowerScale.h"
+#include "Robot.h"
 
-ArmToTowerScale::ArmToTowerScale()
+ArmToTowerScale::ArmToTowerScale() : Command("ArmToTowerScale")
 {
 	// Use Requires() here to declare subsystem dependencies
-	// eg. Requires(chassis);
+	Requires(Robot::armElevator.get());
 }
 
 // Called just before this Command runs the first time

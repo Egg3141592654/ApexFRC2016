@@ -1,10 +1,9 @@
 #ifndef ArmToLowest_H
 #define ArmToLowest_H
 
-#include "../CommandBase.h"
 #include "WPILib.h"
 
-class ArmToLowest: public CommandBase
+class ArmToLowest: public Command
 {
 public:
 	ArmToLowest();
