@@ -13,10 +13,12 @@
 #include "OI.h"
 
 // Subsystem includes
+#include "Subsystems/Arm.h"
 #include "Subsystems/TankDrive.h"
 #include "Subsystems/Pneumatics.h"
 #include "Subsystems/Finger.h"
 #include "Subsystems/Arm.h"
+#include "Subsystems/ArmElevator.h"
 #include "Subsystems/WheelieBar.h"
 #include "Subsystems/BallCollector.h"
 
@@ -29,6 +31,7 @@ public:
 	static std::shared_ptr<Arm> arm;
 	static std::shared_ptr<WheelieBar> wheeliebar;
 	static std::shared_ptr<BallCollector> ballCollector;
+	static std::shared_ptr<ArmElevator> armElevator;
 
 	static std::shared_ptr<OI> oi;
 

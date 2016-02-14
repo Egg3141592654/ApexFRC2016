@@ -1,21 +1,22 @@
-#ifndef Arm_h
-#define Arm_h
+#ifndef Arm_H
+#define Arm_H
 
-#include "Commands/Subsystem.h"
+#include "Commands/PIDSubsystem.h"
 #include "WPILib.h"
 
-#include "../RobotMap.h"
-#include "Commands/MoveArm.h"
-class Arm: public Subsystem
+class Arm: public PIDSubsystem
 {
+
 private:
-	// It's desirable that everything possible under private except
-	// for methods that implement subsystem capabilities
-	Solenoid* solenoid;
+	std::shared_ptr<AnalogInput> controlPot;
+	std::shared_ptr<Talon> motor1;
+	std::shared_ptr<Talon> motor2;
+
 public:
 	Arm();
-		void InitDefaultCommand();
-		void Open(bool);
+	double ReturnPIDInput();
+	void UsePIDOutput(double output);
+	void InitDefaultCommand();
 };
 
 #endif

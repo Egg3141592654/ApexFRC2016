@@ -1,42 +1,38 @@
-#include "MoveArm.h"
-#include "Robot.h"
+#include "ArmToPickup.h"
 
-MoveArm::MoveArm()
+ArmToPickup::ArmToPickup()
 {
 	// Use Requires() here to declare subsystem dependencies
-	Requires(Robot::armElevator.get());
+	// eg. Requires(chassis);
 }
 
 // Called just before this Command runs the first time
-void MoveArm::Initialize()
+void ArmToPickup::Initialize()
 {
 
 }
 
 // Called repeatedly when this Command is scheduled to run
-void MoveArm::Execute()
+void ArmToPickup::Execute()
 {
-	bool result = Robot::oi.get()->GetLeftStick()->GetRawButton(ARM_BUTTON);
-	Robot::armElevator.get()->Open(result);
+
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool MoveArm::IsFinished()
+bool ArmToPickup::IsFinished()
 {
 	return false;
 }
 
 // Called once after isFinished returns true
-void MoveArm::End()
+void ArmToPickup::End()
 {
 
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void MoveArm::Interrupted()
+void ArmToPickup::Interrupted()
 {
 
 }
-
-

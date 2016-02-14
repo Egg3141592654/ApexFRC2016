@@ -1,42 +1,39 @@
-#include "MoveArm.h"
+#include "ArmToTowerScale.h"
 #include "Robot.h"
 
-MoveArm::MoveArm()
+ArmToTowerScale::ArmToTowerScale() : Command("ArmToTowerScale")
 {
 	// Use Requires() here to declare subsystem dependencies
 	Requires(Robot::armElevator.get());
 }
 
 // Called just before this Command runs the first time
-void MoveArm::Initialize()
+void ArmToTowerScale::Initialize()
 {
 
 }
 
 // Called repeatedly when this Command is scheduled to run
-void MoveArm::Execute()
+void ArmToTowerScale::Execute()
 {
-	bool result = Robot::oi.get()->GetLeftStick()->GetRawButton(ARM_BUTTON);
-	Robot::armElevator.get()->Open(result);
+
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool MoveArm::IsFinished()
+bool ArmToTowerScale::IsFinished()
 {
 	return false;
 }
 
 // Called once after isFinished returns true
-void MoveArm::End()
+void ArmToTowerScale::End()
 {
 
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void MoveArm::Interrupted()
+void ArmToTowerScale::Interrupted()
 {
 
 }
-
-
