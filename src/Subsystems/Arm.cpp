@@ -37,8 +37,8 @@ double Arm::ReturnPIDInput()
 	// e.g. a sensor, like a potentiometer:
 	// yourPot->SetAverageVoltage() / kYourMaxVoltage;
 
-	// TODO: Get logic line voltage from myRIO. For now, use 5
-	return controlPot->GetVoltage() / 5.0;
+	// TODO: Get logic line voltage from myRIO. Lets see what this is making here...
+	return controlPot->GetVoltage();
 }
 
 void Arm::UsePIDOutput(double output)
@@ -50,6 +50,12 @@ void Arm::UsePIDOutput(double output)
 	if (output > 1)
 	{
 		output = 1.;
+	}
+
+	// Limit lower values as well
+	if (output < -1)
+	{
+		output = -1;
 	}
 
 	// Write speed to the motors. Note that we don't have to reverse them since we took care of that already.

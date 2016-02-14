@@ -4,7 +4,10 @@
 WheelieBar::WheelieBar() :
 		Subsystem("WheelieBar")
 {
-	solenoid = new Solenoid (SOLENOID_WHEELIEBAR);
+	solenoid.reset(new DoubleSolenoid (SOLENOID_WHEELIEBAR_OUT, SOLENOID_WHEELIEAR_IN));
+
+	// Set the initial home position to be in
+	solenoid->Set(DoubleSolenoid::kReverse);
 }
 
 void WheelieBar::InitDefaultCommand()
@@ -15,7 +18,14 @@ void WheelieBar::InitDefaultCommand()
 
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
-void WheelieBar::Open(bool setposition)
+void WheelieBar::Open(bool setPosition)
 {
-    solenoid->Set(setposition);
+    if (setPosition)
+    {
+    	solenoid->Set(DoubleSolenoid::kForward);
+    }
+    else
+    {
+    	solenoid->Set(DoubleSolenoid::kReverse);
+    }
 }

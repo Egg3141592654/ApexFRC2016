@@ -6,6 +6,9 @@
 
 class MoveFinger: public Command
 {
+private:
+	bool previousState = false;
+	bool buttonPressed = false;
 public:
 	MoveFinger();
 	void Initialize();

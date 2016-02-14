@@ -43,19 +43,20 @@ const int ARM_MOTOR_2_REVERSED = false;
 // Digital Inputs
 const int SOLENOID_FINGER = 0;
 const int SOLENOID_ARM = 5;
-const int SOLENOID_WHEELIEBAR = 4;
+const int SOLENOID_WHEELIEBAR_OUT = 4;
+const int SOLENOID_WHEELIEAR_IN = 5;
 
 // Analog Inputs
 const int PID_CONTROL = 0;
 const int COMPRESSOR_INPUT = 3;
 
 // PID potentiometer values
-const double ARM_HANG_POSITION = .5;
-const double ARM_DRAWBRIDGE_POSITION = .5;
-const double ARM_CARRY_POSITION = .5;
-const double ARM_SALLY_POSITION = .5;
-const double ARM_PICKUP_POSITION = .3;
-const double ARM_LOW_POSITION = 0.;
+const double ARM_HANG_POSITION = 2.5;
+const double ARM_DRAWBRIDGE_POSITION = 2.5;
+const double ARM_CARRY_POSITION = 2.5;
+const double ARM_SALLY_POSITION = 2.5;
+const double ARM_PICKUP_POSITION = 2.3;
+const double ARM_LOW_POSITION = 2.0;
 
 // This value is for tuning the responsivenes of the
 // joystick override.
@@ -80,6 +81,13 @@ const int ARM_SALLY_BUTTON = 4;
 const int ARM_PICKUP_BUTTON = 5;
 const int ARM_LOW_BUTTON = 6;
 
+// Trigger constants (need to actually be set to something real to work
+const double FINGER_UPPER_LIMIT = 5.0;
+const double FINGER_LOWER_LIMIT = 0.0;
+const double WHEELIE_UPPER_LIMIT = 5.0;
+const double WHEELIE_LOWER_LIMIT = 0.0;
+const double ELEVATOR_UPPER_LIMIT = 5.0;
+const double ELEVATOR_LOWER_LIMIT = 0.0;
 
 #endif
 

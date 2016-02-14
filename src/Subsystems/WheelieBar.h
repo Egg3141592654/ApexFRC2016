@@ -12,7 +12,7 @@ class WheelieBar: public Subsystem
 private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
-	Solenoid* solenoid;
+	std::shared_ptr<DoubleSolenoid> solenoid;
 public:
 	WheelieBar();
 	void InitDefaultCommand();
