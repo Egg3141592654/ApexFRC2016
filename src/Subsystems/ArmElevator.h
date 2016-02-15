@@ -12,10 +12,13 @@ private:
 	// for methods that implement subsystem capabilities
 
 	std::shared_ptr<Solenoid> solenoid;
+	bool isLocked = false;
 public:
 	ArmElevator();
 	void InitDefaultCommand();
 	void Open(bool);
+	void SetLocked(bool);
+	std::string GetStatus();
 };
 
 #endif

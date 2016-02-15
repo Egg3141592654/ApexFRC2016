@@ -19,3 +19,15 @@ void ArmElevator::Open(bool setposition)
 {
 	solenoid->Set(setposition);
 }
+
+std::string ArmElevator::GetStatus()
+{
+	std::string returnStatement = isLocked ? "Locked, " : "Unlocked, ";
+	returnStatement += solenoid->Get() ? "Extended" : "Retracted";
+	return returnStatement;
+}
+
+void ArmElevator::SetLocked(bool newLocked)
+{
+	isLocked = newLocked;
+}
