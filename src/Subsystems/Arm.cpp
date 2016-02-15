@@ -23,7 +23,7 @@ Arm::Arm() :
 	motor2->SetInverted(ARM_MOTOR_2_REVERSED);
 
 	// Add this to the smart window? This is awesome!
-	LiveWindow::GetInstance()->AddSensor("Arm", "Arm Control Pot", controlPot.get());
+	LiveWindow::GetInstance()->AddSensor("Arm", "Arm Control Pot", controlPot);
 
 	// ALWAYS SET A PID SYSTEM TO A START POINT!
 	SetSetpoint(ARM_CARRY_POSITION);

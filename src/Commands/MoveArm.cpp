@@ -25,12 +25,14 @@ void MoveArm::Execute()
 		// the first possible hit on the solenoid
 		previousState = false;
 		Robot::armElevator->Open(previousState);
+		Robot::armElevator->SetLocked(true);
 		pushedButton = false;
 		return;
 	}
 
-	// Else, read the button state.
+	// Else, read the button state and unlock.
 	bool result = Robot::oi.get()->GetLeftStick()->GetRawButton(ARM_BUTTON);
+	Robot::armElevator->SetLocked(false);
 
 	if (result && !pushedButton)
 	{

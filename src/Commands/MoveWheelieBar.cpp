@@ -23,10 +23,12 @@ void MoveWheelieBar::Execute()
 		// just reject even moving this.
 		previousState = false;
 		buttonPressed = false;
-		Robot::finger.get()->Open(previousState);
+		Robot::wheeliebar.get()->Open(previousState);
+		Robot::wheeliebar.get()->SetLocked(true);
 		return;
 	}
 
+	Robot::wheeliebar->SetLocked(false);
 	bool result = Robot::oi.get()->GetLeftStick()->GetRawButton(WHEELIEBAR_BUTTON);
 
 	if (result && !buttonPressed)

@@ -13,10 +13,14 @@ private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
 	std::shared_ptr<DoubleSolenoid> solenoid;
+	bool isLocked = false;
+	bool isExtended = false;
 public:
 	WheelieBar();
 	void InitDefaultCommand();
 	void Open(bool);
+	void SetLocked(bool);
+	std::string GetStatus(void);
 };
 
 #endif

@@ -23,9 +23,23 @@ void WheelieBar::Open(bool setPosition)
     if (setPosition)
     {
     	solenoid->Set(DoubleSolenoid::kForward);
+    	isExtended = true;
     }
     else
     {
     	solenoid->Set(DoubleSolenoid::kReverse);
+    	isExtended = false;
     }
+}
+
+void WheelieBar::SetLocked(bool newLocked)
+{
+	isLocked = newLocked;
+}
+
+std::string WheelieBar::GetStatus()
+{
+	std::string toReturn = isLocked ? "Locked, " : "Unlocked, ";
+	toReturn += isExtended ? "Extended" : "Retracted";
+	return toReturn;
 }
