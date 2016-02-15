@@ -5,6 +5,9 @@
 
 class MoveWheelieBar: public Command
 {
+private:
+	bool previousState = false;
+	bool buttonPressed = false;
 public:
 	MoveWheelieBar();
 	void Initialize();

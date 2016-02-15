@@ -1,12 +1,12 @@
-#ifndef ArmToPickup_H
-#define ArmToPickup_H
+#ifndef PositionArm_H
+#define PositionArm_H
 
 #include "WPILib.h"
 
-class ArmToPickup: public Command
+class PositionArm: public Command
 {
 public:
-	ArmToPickup();
+	PositionArm();
 	void Initialize();
 	void Execute();
 	bool IsFinished();
