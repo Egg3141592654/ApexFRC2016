@@ -10,12 +10,12 @@ OverrideCommand::OverrideCommand() : Command("OverrideCommand")
 // Called just before this Command runs the first time
 void OverrideCommand::Initialize()
 {
-	Robot::armOverride->Drive(Robot::oi->GetArmJoystick()->GetY());
 }
 
 // Called repeatedly when this Command is scheduled to run
 void OverrideCommand::Execute()
 {
+	Robot::armOverride->Drive(.5 * Robot::oi->GetArmJoystick()->GetRawAxis(1));
 }
 
 // Make this return true when this Command no longer needs to run execute()
