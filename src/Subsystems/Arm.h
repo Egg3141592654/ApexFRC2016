@@ -13,6 +13,8 @@ private:
 	std::shared_ptr<Talon> motor1;
 	std::shared_ptr<Talon> motor2;
 
+	double SanitizeInput(double);
+
 public:
 	Arm();
 	double ReturnPIDInput();

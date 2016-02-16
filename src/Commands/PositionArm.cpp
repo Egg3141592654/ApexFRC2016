@@ -44,7 +44,7 @@ void PositionArm::Execute()
 	}
 
 	// See of there is any offset set by the operator.
-	Robot::arm->SetNewPosition(Robot::oi->GetLeftStick()->GetRawAxis(ARM_ADJUST_AXIS));
+	Robot::arm->SetNewRelativePosition(Robot::oi->GetOperatorStick());
 }
 
 // Make this return true when this Command no longer needs to run execute()

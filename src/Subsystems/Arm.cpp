@@ -71,10 +71,23 @@ void Arm::InitDefaultCommand()
 
 void Arm::SetNewPosition(double newTarget)
 {
+	if (newTarget > ARM_MAXIMUM_VALUE)
+	{
+		newTarget = ARM_MAXIMUM_VALUE;
+	}
+
+	if (newTarget < ARM_MINIMUM_VALUE)
+	{
+		newTarget = ARM_MINIMUM_VALUE;
+	}
+
 	SetSetpoint(newTarget);
 }
 
 void Arm::SetNewRelativePosition(Joystick * stick)
 {
-	SetSetpointRelative(TUNING_CONSTANT * stick->GetRawAxis(ARM_ADJUST_AXIS));
+	double newPosition = GetSetpoint() +
+			(TUNING_CONSTANT * stick->GetY());
+
+	SetNewPosition(newPosition);
 }

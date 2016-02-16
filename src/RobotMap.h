@@ -54,17 +54,18 @@ const int PID_CONTROL = 0;
 const int COMPRESSOR_INPUT = 3;
 
 // PID potentiometer values
-const double ARM_HANG_POSITION = 2.5;
-const double ARM_DRAWBRIDGE_POSITION = 2.5;
-const double ARM_CARRY_POSITION = 2.5;
-const double ARM_SALLY_POSITION = 2.5;
-const double ARM_PICKUP_POSITION = 2.3;
-const double ARM_LOW_POSITION = 2.0;
+const double ARM_HANG_POSITION = 2.0;
+const double ARM_DRAWBRIDGE_POSITION = 2.1;
+const double ARM_CARRY_POSITION = 2.2;
+const double ARM_SALLY_POSITION = 2.3;
+const double ARM_PICKUP_POSITION = 2.4;
+const double ARM_LOW_POSITION = 2.5;
+const double ARM_MAXIMUM_VALUE = 5.;
+const double ARM_MINIMUM_VALUE = 0.;
 
 // This value is for tuning the responsivenes of the
 // joystick override.
 const double TUNING_CONSTANT = .25;
-const int ARM_ADJUST_AXIS = 4;
 
 // PID Constant Values
 const double ARM_P = .1;
