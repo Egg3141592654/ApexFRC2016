@@ -4,7 +4,7 @@
 #include "LiveWindow/LiveWindow.h"
 
 Arm::Arm() :
-		PIDSubsystem("Arm", 1.0, 0.0, 0.0)
+		PIDSubsystem("Arm", ARM_P, ARM_I, ARM_D)
 {
 	// Use these to get going:
 	// SetSetpoint() -  Sets where the PID controller should move the system
@@ -23,10 +23,10 @@ Arm::Arm() :
 	motor2->SetInverted(ARM_MOTOR_2_REVERSED);
 
 	// Add this to the smart window? This is awesome!
-	LiveWindow::GetInstance()->AddSensor("Arm", "Arm Control Pot", controlPot.get());
+	LiveWindow::GetInstance()->AddSensor("Arm", "Arm Control Pot", controlPot);
 
 	// ALWAYS SET A PID SYSTEM TO A START POINT!
-	SetSetpoint(ARM_START_POSITION);
+	SetSetpoint(ARM_CARRY_POSITION);
 
 	Enable();
 }
@@ -37,8 +37,8 @@ double Arm::ReturnPIDInput()
 	// e.g. a sensor, like a potentiometer:
 	// yourPot->SetAverageVoltage() / kYourMaxVoltage;
 
-	// TODO: Get logic line voltage from myRIO. For now, use 5
-	return controlPot->GetAverageVoltage() / 5.0;
+	// TODO: Get logic line voltage from myRIO. Lets see what this is making here...
+	return controlPot->GetVoltage();
 }
 
 void Arm::UsePIDOutput(double output)
@@ -52,6 +52,12 @@ void Arm::UsePIDOutput(double output)
 		output = 1.;
 	}
 
+	// Limit lower values as well
+	if (output < -1)
+	{
+		output = -1;
+	}
+
 	// Write speed to the motors. Note that we don't have to reverse them since we took care of that already.
 	motor1->Set((float)output);
 	motor2->Set((float)output);
@@ -60,5 +66,15 @@ void Arm::UsePIDOutput(double output)
 void Arm::InitDefaultCommand()
 {
 	// Set the default command for a subsystem here.
-	// There is no default command for this subsystem. Many will call here.
+	SetDefaultCommand(new PositionArm());
+}
+
+void Arm::SetNewPosition(double newTarget)
+{
+	SetSetpoint(newTarget);
+}
+
+void Arm::SetNewRelativePosition(Joystick * stick)
+{
+	SetSetpointRelative(TUNING_CONSTANT * stick->GetRawAxis(ARM_ADJUST_AXIS));
 }

@@ -44,6 +44,7 @@ private:
 	void TeleopInit(void);
 	void TeleopPeriodic(void);
 	void TestPeriodic(void);
+	void Log(void);
 };
 
 

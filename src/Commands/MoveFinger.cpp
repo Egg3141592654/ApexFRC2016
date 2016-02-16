@@ -5,6 +5,7 @@ MoveFinger::MoveFinger() : Command("MoveFinger")
 {
 	// Use Requires() here to declare subsystem dependencies
 	Requires(Robot::finger.get());
+	Requires(Robot::arm.get());
 }
 
 // Called just before this Command runs the first time
@@ -16,8 +17,28 @@ void MoveFinger::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void MoveFinger::Execute()
 {
+	if (Robot::arm->ReturnPIDInput() >= FINGER_UPPER_LIMIT ||
+			Robot::arm->ReturnPIDInput() <= FINGER_LOWER_LIMIT)
+	{
+		previousState = false;
+		buttonPressed = false;
+		Robot::finger.get()->Open(previousState);
+		Robot::finger->SetLocked(true);
+	}
+
+	Robot::finger->SetLocked(false);
 	bool result= Robot::oi.get()->GetRightStick()->GetRawButton(FINGER_BUTTON);
-	Robot::finger.get()->Open(result);
+
+	if (result && !buttonPressed)
+	{
+		previousState = !previousState;
+		Robot::finger.get()->Open(previousState);
+		buttonPressed = true;
+	}
+	else
+	{
+		buttonPressed = false;
+	}
 }
 
 // Make this return true when this Command no longer needs to run execute()

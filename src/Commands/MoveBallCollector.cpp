@@ -16,7 +16,7 @@ void MoveBallCollector::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void MoveBallCollector::Execute()
 {
-	if(Robot::oi->GetRightStick()->GetRawButton(FEEDER_FOREWARD))
+	if(Robot::oi->GetRightStick()->GetRawButton(FEEDER_FORWARD))
 	{
 		Robot::ballCollector->ReleaseBall();
 	}

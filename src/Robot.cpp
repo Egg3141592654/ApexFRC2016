@@ -74,11 +74,24 @@ void Robot::TeleopInit()
 void Robot::TeleopPeriodic()
 {
 	Scheduler::GetInstance()->Run();
+	Log();
 }
 
 void Robot::TestPeriodic()
 {
 	LiveWindow::GetInstance()->Run();
+}
+
+/**
+ * Use this method to log critical system functionality periodicly here.
+ */
+void Robot::Log()
+{
+	SmartDashboard::PutNumber("Target Arm Position", arm->GetSetpoint());
+	SmartDashboard::PutNumber("Current Arm Position", arm->ReturnPIDInput());
+	SmartDashboard::PutString("Finger status", finger->GetStatus());
+	SmartDashboard::PutString("Elevator Status", armElevator->GetStatus());
+	SmartDashboard::PutString("Wheelie Status", wheeliebar->GetStatus());
 }
 
 START_ROBOT_CLASS(Robot)

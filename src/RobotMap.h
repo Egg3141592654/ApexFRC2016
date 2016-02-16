@@ -38,30 +38,62 @@ const int ARM_MOTOR_1 = 5;
 const int ARM_MOTOR_1_REVERSED = false;
 
 const int ARM_MOTOR_2 = 6;
-const int ARM_MOTOR_2_REVERSED = false;
+const int ARM_MOTOR_2_REVERSED = true;
 
 const int FEEDER_MOTOR_PORT = 7;
 const bool FEEDER_MOTOR_REVERSED = false;
 
 // Digital Inputs
 const int SOLENOID_FINGER = 0;
-const int SOLENOID_ARM = 5;
-const int SOLENOID_WHEELIEBAR = 4;
+const int SOLENOID_ARM = 1;
+const int SOLENOID_WHEELIEBAR_OUT = 2;
+const int SOLENOID_WHEELIEAR_IN = 3;
 
 // Analog Inputs
 const int PID_CONTROL = 0;
 const int COMPRESSOR_INPUT = 3;
 
 // PID potentiometer values
-const double ARM_START_POSITION = .5;
+const double ARM_HANG_POSITION = 2.5;
+const double ARM_DRAWBRIDGE_POSITION = 2.5;
+const double ARM_CARRY_POSITION = 2.5;
+const double ARM_SALLY_POSITION = 2.5;
+const double ARM_PICKUP_POSITION = 2.3;
+const double ARM_LOW_POSITION = 2.0;
 
-// Buttons for button joystick
+// This value is for tuning the responsivenes of the
+// joystick override.
+const double TUNING_CONSTANT = .25;
+const int ARM_ADJUST_AXIS = 4;
+
+// PID Constant Values
+const double ARM_P = .1;
+const double ARM_I = 0.;
+const double ARM_D = 0.;
+
+// Buttons for right joystick
 const int ARM_BUTTON = 1;
 const int FINGER_BUTTON = 2;
 const int WHEELIEBAR_BUTTON = 3;
-const int FEEDER_FOREWARD = 7;
-const int FEEDER_STOP = 8;
-const int FEEDER_INGEST = 9;
+const int FEEDER_FORWARD = 4;
+const int FEEDER_STOP = 5;
+const int FEEDER_INGEST = 6;
+
+// Buttons for left Joystick
+const int ARM_CARRY_BUTTON = 1;
+const int ARM_DRAWBRIDGE_BUTTON = 2;
+const int ARM_HANG_BUTTON = 3;
+const int ARM_SALLY_BUTTON = 4;
+const int ARM_PICKUP_BUTTON = 5;
+const int ARM_LOW_BUTTON = 6;
+
+// Trigger constants (need to actually be set to something real to work
+const double FINGER_UPPER_LIMIT = 5.0;
+const double FINGER_LOWER_LIMIT = 0.0;
+const double WHEELIE_UPPER_LIMIT = 5.0;
+const double WHEELIE_LOWER_LIMIT = 0.0;
+const double ELEVATOR_UPPER_LIMIT = 5.0;
+const double ELEVATOR_LOWER_LIMIT = 0.0;
 
 #endif
 

@@ -3,7 +3,7 @@
 Finger::Finger() :
 		Subsystem("Finger")
 {
-solenoid = new Solenoid (SOLENOID_FINGER);
+	solenoid.reset(new Solenoid (SOLENOID_FINGER));
 }
 
 void Finger::InitDefaultCommand()
@@ -17,5 +17,17 @@ void Finger::InitDefaultCommand()
 void Finger::Open(bool setposition)
 {
 	solenoid->Set(setposition);
+}
+
+void Finger::SetLocked(bool newLocked)
+{
+	isLocked = newLocked;
+}
+
+std::string Finger::GetStatus()
+{
+	std::string toReturn = isLocked ? "Locked, " : "Unlocked, ";
+	toReturn += solenoid->Get() ? "Extended" : "Retracted";
+	return toReturn;
 }
 
