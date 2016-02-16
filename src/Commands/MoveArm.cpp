@@ -31,7 +31,7 @@ void MoveArm::Execute()
 	}
 
 	// Else, read the button state and unlock.
-	bool result = Robot::oi.get()->GetLeftStick()->GetRawButton(ARM_BUTTON);
+	bool result = Robot::oi.get()->GetOperatorStick()->GetRawButton(ARM_BUTTON);
 	Robot::armElevator->SetLocked(false);
 
 	if (result && !pushedButton)

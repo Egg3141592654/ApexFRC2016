@@ -35,10 +35,10 @@ const int RIGHT_BACK_MOTOR = 4;
 const bool RIGHT_BACK_REVERSED = false;
 
 const int ARM_MOTOR_1 = 5;
-const int ARM_MOTOR_1_REVERSED = false;
+const bool ARM_MOTOR_1_REVERSED = true;
 
 const int ARM_MOTOR_2 = 6;
-const int ARM_MOTOR_2_REVERSED = true;
+const bool ARM_MOTOR_2_REVERSED = false;
 
 const int FEEDER_MOTOR_PORT = 7;
 const bool FEEDER_MOTOR_REVERSED = false;
@@ -72,20 +72,20 @@ const double ARM_I = 0.;
 const double ARM_D = 0.;
 
 // Buttons for right joystick
-const int ARM_BUTTON = 1;
-const int FINGER_BUTTON = 2;
-const int WHEELIEBAR_BUTTON = 3;
 const int FEEDER_FORWARD = 4;
 const int FEEDER_STOP = 5;
 const int FEEDER_INGEST = 6;
 
-// Buttons for left Joystick
+// Buttons for operator Joystick
 const int ARM_CARRY_BUTTON = 1;
 const int ARM_DRAWBRIDGE_BUTTON = 2;
 const int ARM_HANG_BUTTON = 3;
 const int ARM_SALLY_BUTTON = 4;
 const int ARM_PICKUP_BUTTON = 5;
 const int ARM_LOW_BUTTON = 6;
+const int ARM_BUTTON = 7;
+const int FINGER_BUTTON = 8;
+const int WHEELIEBAR_BUTTON = 9;
 
 // Trigger constants (need to actually be set to something real to work
 const double FINGER_UPPER_LIMIT = 5.0;

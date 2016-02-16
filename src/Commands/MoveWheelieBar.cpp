@@ -29,7 +29,7 @@ void MoveWheelieBar::Execute()
 	}
 
 	Robot::wheeliebar->SetLocked(false);
-	bool result = Robot::oi.get()->GetLeftStick()->GetRawButton(WHEELIEBAR_BUTTON);
+	bool result = Robot::oi.get()->GetOperatorStick()->GetRawButton(WHEELIEBAR_BUTTON);
 
 	if (result && !buttonPressed)
 	{

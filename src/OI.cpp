@@ -2,6 +2,7 @@
 
 std::shared_ptr<Joystick> OI::rightJoystick;
 std::shared_ptr<Joystick> OI::leftJoystick;
+std::shared_ptr<Joystick> OI::operatorJoystick;
 
 /**
  * Initializes a class of OI for the robot driver station communication.
@@ -11,6 +12,7 @@ OI::OI()
 	// Process operator interface input here.
 	OI::rightJoystick.reset(new Joystick(RIGHT_JOYSTICK_PORT));
 	OI::leftJoystick.reset(new Joystick(LEFT_JOYSTICK_PORT));
+	OI::operatorJoystick.reset(new Joystick(OPERATOR_JOYSTICK_PORT));
 
 }
 
@@ -28,4 +30,8 @@ Joystick * OI::GetLeftStick()
 Joystick * OI::GetRightStick()
 {
 	return OI::rightJoystick.get();
+}
+Joystick * OI::GetOperatorStick()
+{
+	return OI::operatorJoystick.get();
 }

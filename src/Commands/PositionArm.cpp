@@ -18,23 +18,23 @@ void PositionArm::Initialize()
 void PositionArm::Execute()
 {
 	// Determine which button is pushed. There is a presidence here (for low values)
-	if (Robot::oi->GetLeftStick()->GetRawButton(ARM_PICKUP_BUTTON))
+	if (Robot::oi->GetOperatorStick()->GetRawButton(ARM_PICKUP_BUTTON))
 	{
 		Robot::arm->SetNewPosition(ARM_PICKUP_POSITION);
 	}
-	else if(Robot::oi->GetLeftStick()->GetRawButton(ARM_LOW_BUTTON))
+	else if(Robot::oi->GetOperatorStick()->GetRawButton(ARM_LOW_BUTTON))
 	{
 		Robot::arm->SetNewPosition(ARM_LOW_POSITION);
 	}
-	else if(Robot::oi->GetLeftStick()->GetRawButton(ARM_CARRY_BUTTON))
+	else if(Robot::oi->GetOperatorStick()->GetRawButton(ARM_CARRY_BUTTON))
 	{
 		Robot::arm->SetNewPosition(ARM_CARRY_POSITION);
 	}
-	else if(Robot::oi->GetLeftStick()->GetRawButton(ARM_DRAWBRIDGE_BUTTON))
+	else if(Robot::oi->GetOperatorStick()->GetRawButton(ARM_DRAWBRIDGE_BUTTON))
 	{
 		Robot::arm->SetNewPosition(ARM_DRAWBRIDGE_POSITION);
 	}
-	else if(Robot::oi->GetLeftStick()->GetRawButton(ARM_HANG_BUTTON))
+	else if(Robot::oi->GetOperatorStick()->GetRawButton(ARM_HANG_BUTTON))
 	{
 		Robot::arm->SetNewPosition(ARM_HANG_POSITION);
 	}

@@ -27,7 +27,7 @@ void MoveFinger::Execute()
 	}
 
 	Robot::finger->SetLocked(false);
-	bool result= Robot::oi.get()->GetRightStick()->GetRawButton(FINGER_BUTTON);
+	bool result= Robot::oi.get()->GetOperatorStick()->GetRawButton(FINGER_BUTTON);
 
 	if (result && !buttonPressed)
 	{

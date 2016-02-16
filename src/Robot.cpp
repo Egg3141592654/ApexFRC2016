@@ -23,6 +23,7 @@ void Robot::RobotInit()
 	oi.reset(new OI());
 
 	pneumatics->Start();
+	LiveWindow::GetInstance()->Run();
 }
 
 /**
