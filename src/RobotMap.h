@@ -40,10 +40,10 @@ const int RIGHT_BACK_MOTOR = 4;
 const bool RIGHT_BACK_REVERSED = false;
 
 const int ARM_MOTOR_1 = 5;
-const int ARM_MOTOR_1_REVERSED = false;
+const bool ARM_MOTOR_1_REVERSED = false;
 
 const int ARM_MOTOR_2 = 6;
-const int ARM_MOTOR_2_REVERSED = true;
+const bool ARM_MOTOR_2_REVERSED = true;
 
 // Digital Inputs
 const int SOLENOID_FINGER = 0;

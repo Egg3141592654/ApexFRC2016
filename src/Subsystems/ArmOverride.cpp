@@ -2,7 +2,7 @@
 #include "../RobotMap.h"
 
 ArmOverride::ArmOverride() :
-		Subsystem("ExampleSubsystem")
+		Subsystem("ArmOverride")
 {
 	left.reset(new Talon(ARM_MOTOR_1));
 	right.reset(new Talon(ARM_MOTOR_2));
@@ -22,5 +22,5 @@ void ArmOverride::InitDefaultCommand()
 void ArmOverride::Drive(float speed)
 {
 	left->SetSpeed(speed);
-	right->SetSpeed(speed);
+	right->SetSpeed(-speed);
 }
