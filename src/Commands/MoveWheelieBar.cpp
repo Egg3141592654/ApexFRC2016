@@ -36,10 +36,15 @@ void MoveWheelieBar::Execute()
 		previousState = !previousState;
 		Robot::wheeliebar.get()->Open(previousState);
 		buttonPressed = true;
+		return;
+	}
+	else if(!result)
+	{
+		buttonPressed = false;
 	}
 	else
 	{
-		buttonPressed = false;
+		// Do nothing, button held or not pressed at all.
 	}
 }
 

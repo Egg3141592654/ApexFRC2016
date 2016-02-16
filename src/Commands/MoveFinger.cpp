@@ -24,6 +24,7 @@ void MoveFinger::Execute()
 		buttonPressed = false;
 		Robot::finger.get()->Open(previousState);
 		Robot::finger->SetLocked(true);
+		return;
 	}
 
 	Robot::finger->SetLocked(false);
@@ -35,9 +36,13 @@ void MoveFinger::Execute()
 		Robot::finger.get()->Open(previousState);
 		buttonPressed = true;
 	}
-	else
+	else if (!result)
 	{
 		buttonPressed = false;
+	}
+	else
+	{
+		// Do nothing, button is continuing to be held or not pressed.
 	}
 }
 

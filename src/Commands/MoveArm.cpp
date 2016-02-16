@@ -40,9 +40,13 @@ void MoveArm::Execute()
 		Robot::armElevator.get()->Open(previousState);
 		pushedButton = true;
 	}
-	else
+	else if (!result)
 	{
 		pushedButton = false;
+	}
+	else
+	{
+		// Do nothing, button is held or not pressed at all.
 	}
 }
 
