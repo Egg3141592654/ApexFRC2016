@@ -13,7 +13,7 @@ private:
 	std::shared_ptr<Talon> motor1;
 	std::shared_ptr<Talon> motor2;
 
-	double SanitizeInput(double);
+	double setPoint;
 
 public:
 	Arm();
@@ -22,6 +22,7 @@ public:
 	void InitDefaultCommand();
 	void SetNewPosition(double);
 	void SetNewRelativePosition(Joystick *);
+	double GetTarget();
 };
 
 #endif

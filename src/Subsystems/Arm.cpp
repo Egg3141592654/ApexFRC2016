@@ -81,7 +81,8 @@ void Arm::SetNewPosition(double newTarget)
 		newTarget = ARM_MINIMUM_VALUE;
 	}
 
-	SetSetpoint(newTarget);
+	setPoint = newTarget;
+	SetSetpoint(setPoint);
 }
 
 void Arm::SetNewRelativePosition(Joystick * stick)
@@ -90,4 +91,9 @@ void Arm::SetNewRelativePosition(Joystick * stick)
 			(TUNING_CONSTANT * stick->GetY());
 
 	SetNewPosition(newPosition);
+}
+
+double Arm::GetTarget()
+{
+	return setPoint;
 }

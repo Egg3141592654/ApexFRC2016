@@ -88,7 +88,7 @@ void Robot::TestPeriodic()
  */
 void Robot::Log()
 {
-	SmartDashboard::PutNumber("Target Arm Position", arm->GetSetpoint());
+	SmartDashboard::PutNumber("Target Arm Position", arm->GetTarget());
 	SmartDashboard::PutNumber("Current Arm Position", arm->ReturnPIDInput());
 	SmartDashboard::PutString("Finger status", finger->GetStatus());
 	SmartDashboard::PutString("Elevator Status", armElevator->GetStatus());

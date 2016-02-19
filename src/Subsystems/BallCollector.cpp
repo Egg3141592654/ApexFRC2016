@@ -19,7 +19,7 @@ void BallCollector::InitDefaultCommand()
 
 void BallCollector::ReleaseBall()
 {
-feeder->Set(.2);
+feeder->Set(.5);
 }
 void BallCollector::Stop()
 {
@@ -27,6 +27,6 @@ feeder->Set(0);
 }
 void BallCollector::IngestBall()
 {
-feeder->Set(-.2);
+feeder->Set(-.5);
 }
 
