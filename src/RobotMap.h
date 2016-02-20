@@ -50,8 +50,8 @@ const int SOLENOID_WHEELIEBAR_OUT = 2;
 const int SOLENOID_WHEELIEAR_IN = 3;
 
 // Analog Inputs
-const int PID_CONTROL = 0;
-const int COMPRESSOR_INPUT = 3;
+const int PID_CONTROL = 3;
+const int COMPRESSOR_INPUT = 0;
 
 // PID potentiometer values
 const double ARM_HANG_POSITION = 2.0;
