@@ -41,6 +41,7 @@ void PositionArm::Execute()
 	else
 	{
 		// Do nothing
+
 	}
 
 	// See of there is any offset set by the operator.

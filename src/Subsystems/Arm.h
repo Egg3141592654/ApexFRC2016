@@ -10,8 +10,8 @@ class Arm: public PIDSubsystem
 
 private:
 	std::shared_ptr<AnalogInput> controlPot;
-	std::shared_ptr<Talon> motor1;
-	std::shared_ptr<Talon> motor2;
+	std::shared_ptr<VictorSP> motor1;
+	std::shared_ptr<VictorSP> motor2;
 
 	double setPoint;
 

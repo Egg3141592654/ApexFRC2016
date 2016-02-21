@@ -24,10 +24,12 @@ void MoveArm::Execute()
 		// set pushed and previous state to false, since we will allow someone to hold a button to get
 		// the first possible hit on the solenoid
 		previousState = false;
+		printf("next is robot armElevator Open(previousState)");
 		Robot::armElevator->Open(previousState);
 		Robot::armElevator->SetLocked(true);
 		pushedButton = false;
 		return;
+
 	}
 
 	// Else, read the button state and unlock.

@@ -4,7 +4,7 @@
 BallCollector::BallCollector() :
 		Subsystem("BallCollector")
 {
-	feeder.reset(new Talon(FEEDER_MOTOR_PORT));
+	feeder.reset(new VictorSP(FEEDER_MOTOR_PORT));
 	feeder->SetInverted(FEEDER_MOTOR_REVERSED);
 }
 

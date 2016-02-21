@@ -15,8 +15,8 @@ Arm::Arm() :
 	controlPot.reset(new AnalogInput(PID_CONTROL));
 
 	// Create the motor objects first before starting up the arm
-	motor1.reset(new Talon(ARM_MOTOR_1));
-	motor2.reset(new Talon(ARM_MOTOR_2));
+	motor1.reset(new VictorSP(ARM_MOTOR_1));
+	motor2.reset(new VictorSP(ARM_MOTOR_2));
 
 	// Set motor inversions correctly
 	motor1->SetInverted(ARM_MOTOR_1_REVERSED);
@@ -26,7 +26,9 @@ Arm::Arm() :
 	LiveWindow::GetInstance()->AddSensor("Arm", "Arm Control Pot", controlPot);
 
 	// ALWAYS SET A PID SYSTEM TO A START POINT!
-	SetSetpoint(ARM_CARRY_POSITION);
+	printf ("set setPoint to ARM_CARRY_POSITION");
+	setPoint = ARM_CARRY_POSITION;
+	SetSetpoint(setPoint);
 
 	Enable();
 }
@@ -49,7 +51,7 @@ void Arm::UsePIDOutput(double output)
 	// Cap the values at 1 so nothing strange happens
 	if (output > 1)
 	{
-		output = 1.;
+		output = 1;
 	}
 
 	// Limit lower values as well

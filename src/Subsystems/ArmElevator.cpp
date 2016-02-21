@@ -5,6 +5,7 @@ ArmElevator::ArmElevator() :
 		Subsystem("ArmElevator")
 {
 	solenoid.reset(new Solenoid (SOLENOID_ARM));
+	printf ("armevator");
 }
 
 void ArmElevator::InitDefaultCommand()

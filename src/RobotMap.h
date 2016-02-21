@@ -45,6 +45,7 @@ const bool FEEDER_MOTOR_REVERSED = false;
 
 // Digital Inputs
 const int SOLENOID_FINGER = 0;
+//const int SOLENOID_FINGER_IN = 3;
 const int SOLENOID_ARM = 1;
 const int SOLENOID_WHEELIEBAR_OUT = 2;
 const int SOLENOID_WHEELIEAR_IN = 3;
@@ -54,14 +55,14 @@ const int PID_CONTROL = 3;
 const int COMPRESSOR_INPUT = 0;
 
 // PID potentiometer values
-const double ARM_HANG_POSITION = 2.0;
-const double ARM_DRAWBRIDGE_POSITION = 2.1;
-const double ARM_CARRY_POSITION = 2.2;
-const double ARM_SALLY_POSITION = 2.3;
-const double ARM_PICKUP_POSITION = 2.4;
-const double ARM_LOW_POSITION = 2.5;
-const double ARM_MAXIMUM_VALUE = 5.;
-const double ARM_MINIMUM_VALUE = 0.;
+const double ARM_HANG_POSITION = 1.6;
+const double ARM_DRAWBRIDGE_POSITION = 1.5;
+const double ARM_CARRY_POSITION = 1.1;
+const double ARM_SALLY_POSITION = 1.3;
+const double ARM_PICKUP_POSITION = 1;
+const double ARM_LOW_POSITION = .9;
+const double ARM_MAXIMUM_VALUE = 1.8;
+const double ARM_MINIMUM_VALUE = 0.09;
 
 // This value is for tuning the responsivenes of the
 // joystick override.

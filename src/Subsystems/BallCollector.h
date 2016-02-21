@@ -9,7 +9,7 @@
 class BallCollector: public Subsystem
 {
 private:
-	std::shared_ptr<Talon>feeder;
+	std::shared_ptr<VictorSP>feeder;
 
 public:
 	BallCollector();
