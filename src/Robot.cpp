@@ -3,7 +3,7 @@
 
 std::shared_ptr<TankDrive> Robot::drivetrain;
 std::shared_ptr<Pneumatics> Robot::pneumatics;
-std::shared_ptr<Finger> Robot::finger;
+//std::shared_ptr<Finger> Robot::finger;
 std::shared_ptr<Arm> Robot::arm;
 std::shared_ptr<WheelieBar> Robot::wheeliebar;
 std::shared_ptr<BallCollector> Robot::ballCollector;
@@ -15,13 +15,12 @@ void Robot::RobotInit()
 {
 	drivetrain.reset(new TankDrive());
 	pneumatics.reset(new Pneumatics());
-	finger.reset(new Finger());
+//	finger.reset(new Finger());
 	arm.reset(new Arm());
 	wheeliebar.reset(new WheelieBar());
 	ballCollector.reset(new BallCollector());
 	armElevator.reset(new ArmElevator());
 	oi.reset(new OI());
-
 	pneumatics->Start();
 	LiveWindow::GetInstance()->Run();
 }
@@ -90,9 +89,10 @@ void Robot::Log()
 {
 	SmartDashboard::PutNumber("Target Arm Position", arm->GetTarget());
 	SmartDashboard::PutNumber("Current Arm Position", arm->ReturnPIDInput());
-	SmartDashboard::PutString("Finger status", finger->GetStatus());
+//	SmartDashboard::PutString("Finger status", GetFinger()->GetStatus());
 	SmartDashboard::PutString("Elevator Status", armElevator->GetStatus());
 	SmartDashboard::PutString("Wheelie Status", wheeliebar->GetStatus());
+	SmartDashboard::PutData("Scheduler", Scheduler::GetInstance());
 }
 
 START_ROBOT_CLASS(Robot)

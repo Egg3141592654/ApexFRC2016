@@ -4,7 +4,7 @@
 WheelieBar::WheelieBar() :
 		Subsystem("WheelieBar")
 {
-	solenoid.reset(new DoubleSolenoid (SOLENOID_WHEELIEBAR_OUT, SOLENOID_WHEELIEAR_IN));
+	solenoid.reset(new DoubleSolenoid (SOLENOID_WHEELIEBAR_OUT, SOLENOID_WHEELIEBAR_IN));
 
 	// Set the initial home position to be in
 	solenoid->Set(DoubleSolenoid::kReverse);

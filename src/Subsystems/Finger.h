@@ -1,11 +1,13 @@
 #ifndef Finger_H
 #define Finger_H
 
-#include "Commands/Subsystem.h"
-#include "WPILib.h"
+#include <Commands/Subsystem.h>
+#include <cstdbool>
+#include <memory>
+#include <string>
 
-#include "../RobotMap.h"
-#include "Commands/MoveFinger.h"
+class Solenoid;
+
 class Finger: public Subsystem
 {
 private:

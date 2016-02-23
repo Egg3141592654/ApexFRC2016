@@ -5,7 +5,6 @@ ArmElevator::ArmElevator() :
 		Subsystem("ArmElevator")
 {
 	solenoid.reset(new Solenoid (SOLENOID_ARM));
-	printf ("armevator");
 }
 
 void ArmElevator::InitDefaultCommand()
@@ -24,6 +23,7 @@ void ArmElevator::Open(bool setposition)
 std::string ArmElevator::GetStatus()
 {
 	std::string returnStatement = isLocked ? "Locked, " : "Unlocked, ";
+//	printf("armevator");
 	returnStatement += solenoid->Get() ? "Extended" : "Retracted";
 	return returnStatement;
 }

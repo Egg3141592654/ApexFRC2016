@@ -11,6 +11,7 @@ BallCollector::BallCollector() :
 void BallCollector::InitDefaultCommand()
 {
 	// Set the default command for a subsystem here.
+	printf("set default collector command \n");
 	SetDefaultCommand(new MoveBallCollector());
 }
 
@@ -19,7 +20,7 @@ void BallCollector::InitDefaultCommand()
 
 void BallCollector::ReleaseBall()
 {
-feeder->Set(.5);
+feeder->Set(1);
 }
 void BallCollector::Stop()
 {

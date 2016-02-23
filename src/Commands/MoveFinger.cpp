@@ -1,3 +1,4 @@
+/*
 #include "MoveFinger.h"
 #include "Robot.h"
 
@@ -6,6 +7,7 @@ MoveFinger::MoveFinger() : Command("MoveFinger")
 	// Use Requires() here to declare subsystem dependencies
 	Requires(Robot::finger.get());
 	Requires(Robot::arm.get());
+	Requires(Robot::wheeliebar.get());
 }
 
 // Called just before this Command runs the first time
@@ -64,3 +66,4 @@ void MoveFinger::Interrupted()
 {
 
 }
+*/

@@ -21,7 +21,7 @@ public:
 	void UsePIDOutput(double output);
 	void InitDefaultCommand();
 	void SetNewPosition(double);
-	void SetNewRelativePosition(Joystick *);
+	void SetNewRelativePosition(Joystick * );
 	double GetTarget();
 };
 

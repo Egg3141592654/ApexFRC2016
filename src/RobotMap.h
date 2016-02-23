@@ -35,20 +35,21 @@ const int RIGHT_BACK_MOTOR = 4;
 const bool RIGHT_BACK_REVERSED = false;
 
 const int ARM_MOTOR_1 = 5;
-const bool ARM_MOTOR_1_REVERSED = true;
+const bool ARM_MOTOR_1_REVERSED = false;
 
 const int ARM_MOTOR_2 = 6;
-const bool ARM_MOTOR_2_REVERSED = false;
+const bool ARM_MOTOR_2_REVERSED = true;
 
 const int FEEDER_MOTOR_PORT = 7;
 const bool FEEDER_MOTOR_REVERSED = false;
 
 // Digital Inputs
-const int SOLENOID_FINGER = 0;
-//const int SOLENOID_FINGER_IN = 3;
+const int SOLENOID_FINGER = 2;
+const int SOLENOID_FINGER2 = 4;
 const int SOLENOID_ARM = 1;
-const int SOLENOID_WHEELIEBAR_OUT = 2;
-const int SOLENOID_WHEELIEAR_IN = 3;
+const int SOLENOID_ARM2 = 3;
+const int SOLENOID_WHEELIEBAR_OUT = 0;
+const int SOLENOID_WHEELIEBAR_IN = 6;
 
 // Analog Inputs
 const int PID_CONTROL = 3;
@@ -59,17 +60,17 @@ const double ARM_HANG_POSITION = 1.6;
 const double ARM_DRAWBRIDGE_POSITION = 1.5;
 const double ARM_CARRY_POSITION = 1.1;
 const double ARM_SALLY_POSITION = 1.3;
-const double ARM_PICKUP_POSITION = 1;
-const double ARM_LOW_POSITION = .9;
-const double ARM_MAXIMUM_VALUE = 1.8;
-const double ARM_MINIMUM_VALUE = 0.09;
+const double ARM_PICKUP_POSITION = .8;
+const double ARM_LOW_POSITION = .5;
+const double ARM_MAXIMUM_VALUE = 1.5;
+const double ARM_MINIMUM_VALUE = 0.5;
 
 // This value is for tuning the responsivenes of the
 // joystick override.
 const double TUNING_CONSTANT = .25;
 
 // PID Constant Values
-const double ARM_P = .1;
+const double ARM_P = .8;
 const double ARM_I = 0.;
 const double ARM_D = 0.;
 
@@ -88,6 +89,9 @@ const int ARM_LOW_BUTTON = 6;
 const int ARM_BUTTON = 7;
 const int FINGER_BUTTON = 8;
 const int WHEELIEBAR_BUTTON = 9;
+const int ARM_BUTTON2 = 7;
+const int FINGER_BUTTON2 = 9;
+const int WHEELIEBAR_BUTTON2 = 11;
 
 // Trigger constants (need to actually be set to something real to work
 const double FINGER_UPPER_LIMIT = 5.0;

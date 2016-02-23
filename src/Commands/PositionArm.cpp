@@ -17,6 +17,8 @@ void PositionArm::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void PositionArm::Execute()
 {
+
+	printf("executing PositionArm \n \n \n");
 	// Determine which button is pushed. There is a presidence here (for low values)
 	if (Robot::oi->GetOperatorStick()->GetRawButton(ARM_PICKUP_BUTTON))
 	{
@@ -45,7 +47,7 @@ void PositionArm::Execute()
 	}
 
 	// See of there is any offset set by the operator.
-	Robot::arm->SetNewRelativePosition(Robot::oi->GetOperatorStick());
+//	Robot::arm->SetNewRelativePosition(Robot::oi->GetOperatorStick());
 }
 
 // Make this return true when this Command no longer needs to run execute()

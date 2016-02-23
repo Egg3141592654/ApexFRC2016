@@ -17,7 +17,6 @@
 #include "Subsystems/TankDrive.h"
 #include "Subsystems/Pneumatics.h"
 #include "Subsystems/Finger.h"
-#include "Subsystems/Arm.h"
 #include "Subsystems/ArmElevator.h"
 #include "Subsystems/WheelieBar.h"
 #include "Subsystems/BallCollector.h"
@@ -27,6 +26,8 @@ class Robot : public IterativeRobot
 public:
 	static std::shared_ptr<TankDrive> drivetrain;
 	static std::shared_ptr<Pneumatics> pneumatics;
+
+
 	static std::shared_ptr<Finger> finger;
 	static std::shared_ptr<Arm> arm;
 	static std::shared_ptr<WheelieBar> wheeliebar;

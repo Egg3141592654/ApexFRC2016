@@ -26,7 +26,6 @@ Arm::Arm() :
 	LiveWindow::GetInstance()->AddSensor("Arm", "Arm Control Pot", controlPot);
 
 	// ALWAYS SET A PID SYSTEM TO A START POINT!
-	printf ("set setPoint to ARM_CARRY_POSITION");
 	setPoint = ARM_CARRY_POSITION;
 	SetSetpoint(setPoint);
 
@@ -63,16 +62,20 @@ void Arm::UsePIDOutput(double output)
 	// Write speed to the motors. Note that we don't have to reverse them since we took care of that already.
 	motor1->Set((float)output);
 	motor2->Set((float)output);
+//	SetDefaultCommand(new PositionArm());
 }
 
 void Arm::InitDefaultCommand()
 {
 	// Set the default command for a subsystem here.
+	printf("set default PositionArm Command");
 	SetDefaultCommand(new PositionArm());
 }
 
 void Arm::SetNewPosition(double newTarget)
 {
+	printf("set new target arm position \n");
+
 	if (newTarget > ARM_MAXIMUM_VALUE)
 	{
 		newTarget = ARM_MAXIMUM_VALUE;
@@ -83,14 +86,16 @@ void Arm::SetNewPosition(double newTarget)
 		newTarget = ARM_MINIMUM_VALUE;
 	}
 
+
 	setPoint = newTarget;
 	SetSetpoint(setPoint);
 }
 
 void Arm::SetNewRelativePosition(Joystick * stick)
 {
+	printf("new relative position \n");
 	double newPosition = GetSetpoint() +
-			(TUNING_CONSTANT * stick->GetY());
+			(TUNING_CONSTANT/6 * stick->GetY());
 
 	SetNewPosition(newPosition);
 }

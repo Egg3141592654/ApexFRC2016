@@ -1,5 +1,5 @@
 #include "Finger.h"
-
+#include <RobotMap.h>
 Finger::Finger() :
 		Subsystem("Finger")
 {
@@ -9,7 +9,7 @@ Finger::Finger() :
 void Finger::InitDefaultCommand()
 {
 	// Set the default command for a subsystem here.
-	SetDefaultCommand(new MoveFinger());
+	//SetDefaultCommand(new MoveFinger());
 }
 
 // Put methods for controlling this subsystem
